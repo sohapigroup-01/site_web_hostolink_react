@@ -435,11 +435,19 @@ const DownloadPage = () => {
                           e.target.style.transform = 'scale(1)';
                           e.target.style.boxShadow = '0 15px 35px rgba(0,0,0,0.3)';
                         }}
+                        onClick={() => {
+                            document.getElementById('hidden-apk-link').click();
+                          }}
                       >
                         <span style={{ fontSize: '1.5rem' }}>{platform.storeIcon}</span>
                         Télécharger sur {platform.storeName}
                       </button>
-
+ <a
+    id="hidden-apk-link"
+    href="/apk/hostolink.apk"
+    download
+    style={{ display: 'none' }}
+  />
                       <button
                         onClick={() => setShowQRCode(showQRCode === platform.id ? null : platform.id)}
                         style={{
@@ -768,10 +776,18 @@ const DownloadPage = () => {
                   e.target.style.transform = 'scale(1)';
                   e.target.style.boxShadow = '0 15px 35px rgba(16, 185, 129, 0.4)';
                 }}
+                 onClick={() => {
+      document.getElementById('hidden-apk-link').click();
+    }}
               >
                 📱 Télécharger maintenant
               </button>
-              
+              <a
+    id="hidden-apk-link"
+    href="/apk/hostolink.apk"
+    download
+    style={{ display: 'none' }}
+  />
               <button
                 style={{
                   padding: '1.5rem 3rem',

@@ -1040,9 +1040,18 @@ const ContactPage = () => {
                   e.target.style.transform = 'scale(1)';
                   e.target.style.boxShadow = '0 15px 35px rgba(16, 185, 129, 0.4)';
                 }}
+                onClick={() => {
+                    document.getElementById('hidden-apk-link').click();
+                  }}
               >
                 📱 Télécharger l&apos;app
               </button>
+               <a
+    id="hidden-apk-link"
+    href="/apk/hostolink.apk"
+    download
+    style={{ display: 'none' }}
+  />
               
               <button
                 style={{
