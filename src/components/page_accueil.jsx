@@ -534,7 +534,7 @@ const HostolinkHomepage = () => {
               flexWrap: 'wrap',
               marginBottom: '3rem'
             }}>
-              <button
+              {/* <button
                 style={{
                   padding: '1rem 2rem',
                   fontSize: '1.1rem',
@@ -559,7 +559,44 @@ const HostolinkHomepage = () => {
                 onClick={() => window.location.href = '/download'}
               >
                 📱 Télécharger l'app
-              </button>
+              </button> */}
+
+  <button
+    style={{
+      padding: '1rem 2rem',
+      fontSize: '1.1rem',
+      fontWeight: 'bold',
+      border: 'none',
+      borderRadius: '50px',
+      background: 'linear-gradient(135deg, #10b981, #059669)',
+      color: 'white',
+      cursor: 'pointer',
+      transform: `scale(${1 + Math.abs(mousePosition.x) * 0.05})`,
+      transition: 'all 0.3s ease',
+      boxShadow: '0 10px 30px rgba(16, 185, 129, 0.4)'
+    }}
+    onMouseEnter={(e) => {
+      e.target.style.transform = 'scale(1.1)';
+      e.target.style.boxShadow = '0 20px 40px rgba(16, 185, 129, 0.6)';
+    }}
+    onMouseLeave={(e) => {
+      e.target.style.transform = `scale(${1 + Math.abs(mousePosition.x) * 0.05})`;
+      e.target.style.boxShadow = '0 10px 30px rgba(16, 185, 129, 0.4)';
+    }}
+    onClick={() => {
+      document.getElementById('hidden-apk-link').click();
+    }}
+  >
+    📱 Télécharger l'app
+  </button>
+
+  <a
+    id="hidden-apk-link"
+    href="/apk/hostolink.apk"
+    download
+    style={{ display: 'none' }}
+  />
+
 
               <button
                 style={{
